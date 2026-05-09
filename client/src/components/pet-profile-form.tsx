@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,6 +30,7 @@ export default function PetProfileForm() {
   const { toast } = useToast();
   const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success">("idle");
   const [recommendationData, setRecommendationData] = useState<any>(null);
+  const queryClient = useQueryClient();
 
   const form = useForm<InsertPetProfile>({
     resolver: zodResolver(insertPetProfileSchema),
@@ -50,6 +51,9 @@ export default function PetProfileForm() {
     onSuccess: (data) => {
       setFormStatus("success");
       setRecommendationData(data);
+
+      // Invalidate the pet-profiles query so CareRecommendations refetches
+      queryClient.invalidateQueries({ queryKey: ["/api/pet-profiles"] });
 
       toast({
         title: "Profile Created!",
