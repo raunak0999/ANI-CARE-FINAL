@@ -183,8 +183,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         name: "Chicken Biscuits",
         description: "Delicious chicken-flavored treats for your furry friend.",
         price: 299,
-        imageUrl:
-          "https://images.unsplash.com/photo-1535930749574-1399327ce78f?w=300&h=200&fit=crop&auto=format",
+        imageUrl: "/products/chicken-biscuits.png",
         rating: 4.5,
         isRecommended: true,
         isBestseller: false,
@@ -196,8 +195,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         name: "Squeaky Toy Bone",
         description: "Fun squeaky toy bone for hours of play.",
         price: 199,
-        imageUrl:
-          "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=300&h=200&fit=crop&auto=format",
+        imageUrl: "/products/squeaky-toy-bone.png",
         rating: 4,
         isRecommended: false,
         isBestseller: true,
@@ -209,8 +207,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         name: "Joint Health Supplements",
         description: "Veterinary-approved supplements for joint care.",
         price: 599,
-        imageUrl:
-          "https://images.unsplash.com/photo-1559190394-df5a28aab5c5?w=300&h=200&fit=crop&auto=format",
+        imageUrl: "/products/joint-supplements.png",
         rating: 4.8,
         isRecommended: true,
         isBestseller: false,
@@ -222,8 +219,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         name: "Grooming Comb Set",
         description: "Professional grooming set for all coat types.",
         price: 449,
-        imageUrl:
-          "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=300&h=200&fit=crop&auto=format",
+        imageUrl: "/products/grooming-comb-set.png",
         rating: 4.3,
         isRecommended: false,
         isBestseller: true,
@@ -235,8 +231,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         name: "Premium Dry Food",
         description: "High-protein dry food for adult dogs with real chicken.",
         price: 899,
-        imageUrl:
-          "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=300&h=200&fit=crop&auto=format",
+        imageUrl: "/products/premium-dry-food.png",
         rating: 4.7,
         isRecommended: true,
         isBestseller: true,
@@ -248,8 +243,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         name: "Interactive Cat Toy",
         description: "Feather wand toy that keeps cats entertained for hours.",
         price: 249,
-        imageUrl:
-          "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=300&h=200&fit=crop&auto=format",
+        imageUrl: "/products/interactive-cat-toy.png",
         rating: 4.4,
         isRecommended: false,
         isBestseller: true,
@@ -261,8 +255,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         name: "Organic Pet Shampoo",
         description: "Gentle, organic shampoo for sensitive skin pets.",
         price: 349,
-        imageUrl:
-          "https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?w=300&h=200&fit=crop&auto=format",
+        imageUrl: "/products/organic-pet-shampoo.png",
         rating: 4.6,
         isRecommended: true,
         isBestseller: false,
@@ -274,8 +267,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         name: "Detangling Brush",
         description: "Ergonomic detangling brush for medium to long fur.",
         price: 179,
-        imageUrl:
-          "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=200&fit=crop&auto=format",
+        imageUrl: "/products/detangling-brush.png",
         rating: 4.2,
         isRecommended: false,
         isBestseller: false,
