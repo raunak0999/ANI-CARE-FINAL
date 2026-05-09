@@ -126,20 +126,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       console.log("📩 Incoming chat request:", req.body);
 
-      const validatedData = insertChatMessageSchema.parse(req.body);
-      console.log("✅ Validated chat message:", validatedData);
+      const { message, sessionId } = req.body;
+      if (!message || !sessionId) {
+        return res.status(400).json({ message: "Missing message or sessionId" });
+      }
 
       const petContext = lastPetProfile
         ? `Pet Name: ${lastPetProfile.name}, Age: ${lastPetProfile.age}, Breed: ${lastPetProfile.breed}, Size: ${lastPetProfile.size ?? "N/A"}`
         : undefined;
 
-      const reply = await generateChatResponse(validatedData.message, petContext);
+      const reply = await generateChatResponse(message, petContext);
 
       // ✅ Save to DB
       try {
         await storage.saveChatMessage({
-          sessionId: validatedData.sessionId,
-          message: validatedData.message,
+          sessionId,
+          message,
           response: reply,
         });
       } catch (err: any) {
